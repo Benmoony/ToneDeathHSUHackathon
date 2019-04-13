@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "start dev": "nodemon index.js",
-    "client": "npm start --prefix tone-death-app",
+    "client": "npm start --prefix ..\\tone-death-app\\",
     "prod": "concurrently \"npm run start\" \"npm run client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

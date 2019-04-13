@@ -4,16 +4,18 @@
   "description": "Web App using ML to create songs",
   "main": "index.js",
   "scripts": {
-    "start": "npm run index.js",
+    "start": "node index.js",
     "start dev": "nodemon index.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "client": "npm start --prefix tone-death-app",
+    "prod": "concurrently \"npm run start\" \"npm run client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Levi Pole, Ben Miller, Zach Pole",
   "license": "ISC",
   "dependencies": {
     "concurrently": "^4.1.0",
+    "express": "^4.16.4",
+    "magenta": "0.0.0",
     "nodemon": "^1.18.11"
   }
 }

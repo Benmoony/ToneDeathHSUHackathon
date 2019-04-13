@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+body{
+  height: 70vh;
+  background-color: #0f0f0f ;
+  color: #fffff0;
+}
+
+
+.form-container{
+  font-family: 'Ubuntu', sans-serif;
+  padding-top: 2em;
+  text-align: left;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.form-check{
+  padding-left: 2em;
+  transition: background-color .75s, color .75s;
+}
+
+.form-check:hover{
+  background-color: #fffff0;
+  color: #0f0f0f;
+}
+
+button{
+  
+}
+
+.form-group{
+  text-align: center;
+}
+
+input[type=checkbox]{
+  height: 2em;
+  width: 2em;
+}
+
+
+
+footer{
+  background-color: #282c34;
+  height: 8vh;
+  padding: 1vh;
+}
+
+footer > p {
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+  color: white;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "tone-death",
+  "version": "1.0.0",
+  "description": "Web App using ML to create songs",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run index.js",
+    "start dev": "nodemon index.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Levi Pole, Ben Miller, Zach Pole",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.11"
+  }
+}

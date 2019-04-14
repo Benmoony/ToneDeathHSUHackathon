@@ -23,6 +23,7 @@
     "fs": "0.0.1-security",
     "magenta": "0.0.0",
     "midi-file-parser": "^1.0.0",
+    "midi-writer-js": "^1.7.1",
     "midiconvert": "^0.4.7",
     "midifile": "^2.0.0",
     "midiutils": "0.0.4",

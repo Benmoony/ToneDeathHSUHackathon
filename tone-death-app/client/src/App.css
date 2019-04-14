@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+body{
+  height: 70vh;
+  background-color: #0f0f0f ;
+  color: #fffff0;
+}
+
+
+.form-container{
+  font-family: 'Ubuntu', sans-serif;
+  padding-top: 2em;
+  text-align: left;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.form-check{
+  padding-left: 2em;
+  transition: background-color .75s, color .75s;
+}
+
+.form-check:hover{
+  background-color: #fffff0;
+  color: #0f0f0f;
+}
+
+.btn-holder{
+  padding-top: .5em;
+  width:33.5em;
+  height:38em;
+  margin: auto;
+}
+
+.btn-row{
+  padding: 0;
+  margin: 0;
+}
+
+.power{
+  width: 10em;
+  height: 10em;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display:block;
+  float: left;
+  transition: opacity .3s, border-radius .4s, border-color .5s, border-width .5s;
+}
+
+.power:hover{
+  border-radius: 75%;
+}
+
+.power:active{
+  opacity: .7;
+  border-width: 2px;
+}
+
+#btn-1{
+  background-color: #E70000;
+}
+
+#btn-2{
+  background-color: #FF8C00;
+}
+
+#btn-3{
+  background-color: #FFEF00;
+}
+
+#btn-4{
+  background-color: #00811F;
+}
+
+#btn-5{
+  background-color: #FF8C00;
+}
+
+#btn-6{
+  background-color: #FFEF00;
+}
+
+#btn-7{
+  background-color: #00811F;
+}
+
+#btn-8{
+  background-color: #0044FF;
+}
+
+#btn-9{
+  background-color: #FFEF00;
+}
+
+#btn-10{
+  background-color: #00811F;
+}
+
+#btn-11{
+  background-color: #0044FF;
+}
+
+#btn-12{
+  background-color: #760089;
+}
+
+#btn-13{
+  background-color: #00811F;
+}
+
+#btn-14{
+  background-color: #0044FF;
+}
+
+#btn-15{
+  background-color: #760089;
+}
+
+#btn-16{
+  background-color: #E70000;
+}
+.form-group{
+  text-align: center;
+}
+
+input[type=checkbox]{
+  height: 2em;
+  width: 2em;
+}
+
+footer{
+  background-color: #282c34;
+  height: 8vh;
+  padding: 1vh;
+}
+
+footer > p {
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+  color: white;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

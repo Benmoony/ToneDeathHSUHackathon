@@ -7,16 +7,18 @@ import axios from 'axios'
 //The array of options for the checkbox to select which files
 //You are sending to Magenta.js
 //var OPTIONS= ["Test", "Test2", "Test3"];
-const input_numbers = [];
+const input_numbers = {};
 var num_clicks = 0;
 
 class App extends Component {
 
   componentDidMount(){
-    /*axios.get(`http://localhost:8080/api`)
+    axios.get(`http://localhost:8080/api`)
       .then(res => {
-        OPTIONS.push(res.data.message);
-      })*/
+        //alert(res.data.message);
+    })
+
+    
   }
   
   getCursor(e) {
@@ -26,21 +28,26 @@ class App extends Component {
 
     if(choice == 1){
       //in the future replace with using x and y to generate the random numbers between 1 and 125
-      var rand = Math.floor(Math.random() * 125) + 1;
+      var rand = Math.floor(Math.random() * 127) + 1;
     }
 
     if(choice == 2){
-      var rand = Math.floor(Math.random() * 125) + 1;
+      var rand = Math.floor(Math.random() * 127) + 1;
     }
     
-    alert(rand);
-    input_numbers.push(rand);
+    //alert(rand);
+    input_numbers[num_clicks] = rand;
     num_clicks++;
   }
 
   sendNumbers(e){
     //This function sends numbers to a text file to the server for the tenser flow application to parse
-    alert("sent numbers: " + input_numbers);
+    //alert("sent numbers: " + input_numbers);
+
+    axios.post(`http://localhost:8080/api/post`, input_numbers)
+      .then(res => {
+        alert("post data: " + res.data);
+    })
   }
 
   numClicksGet(){

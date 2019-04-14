@@ -71,11 +71,16 @@ router.get('/', (req, res) => {
    res.json({ message: 'hooray! welcome to our api!' });
 });
 
-router.get('/getMidi', function(req, res, next) {
+/*router.get('/getMidi', function(req, res, next) {
 	console.log("test");
 	res.render('index', { title: 'Express' });
 	let result = ["Midi-One", "Midi-Two", "Midi-Three", "Midi-Five"];
 	res.send({result: result})
+});*/
+
+router.post('/post', function (req, res){
+   var data = req.body.input_numbers;
+   res.send("got your post: " + data);
 });
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api

@@ -6,7 +6,8 @@ import axios from 'axios'
 
 //The array of options for the checkbox to select which files
 //You are sending to Magenta.js
-var OPTIONS= ["Test", "Test2", "Test3"];
+//var OPTIONS= ["Test", "Test2", "Test3"];
+const input_numbers = [];
 
 class App extends Component {
 
@@ -16,95 +17,60 @@ class App extends Component {
         OPTIONS.push(res.data.message);
       })*/
   }
-  //sets the state of all checkboxes to false
-  state = {
-    checkboxes: OPTIONS.reduce(
-      (options, option) => ({
-        ...options,
-        [option]: false
-      }),
-      {}
-    )
-  };
-
-  selectAllCheckboxes = isSelected => {
-    Object.keys(this.state.checkboxes).forEach(checkbox => {
-      this.setState(prevState => ({
-        checkboxes: {
-          ...prevState.checkboxes,
-          [checkbox]: isSelected
-        }
-      }));
-    });
-  };
-
-  selectAll = () => this.selectAllCheckboxes(true);
-
-  deselectAll = () => this.selectAllCheckboxes(false);
-
-  handleCheckboxChange = changeEvent => {
-    const { name } = changeEvent.target;
-
-    this.setState(prevState => ({
-      checkboxes: {
-        ...prevState.checkboxes,
-        [name]: !prevState.checkboxes[name]
-      }
-    }));
-  };
-
-  handleFormSubmit = formSubmitEvent => {
-    formSubmitEvent.preventDefault();
-
-    Object.keys(this.state.checkboxes)
-      .filter(checkbox => this.state.checkboxes[checkbox])
-      .forEach(checkbox => {
-        alert(checkbox, "is selected.");
-      });
-  };
-
-  createCheckbox = option => (
-    <Checkbox label={option}
-      isSelected={this.state.checkboxes[option]}
-      onCheckboxChange={this.handleCheckboxChange}
-      key={option}
-    />
-  );
-
-  fetchMidi(){
-  }
-
   
+  getCursor(e) {
+    var x = e.screenX;
+    var y = e.screenY;
+    var choice = Math.floor(Math.random() * 2) + 1;
 
-  //creates checkboxes
-  createCheckboxes = () => OPTIONS.map(this.createCheckbox);
+    if(choice == 1){
+      var rand = Math.floor(Math.random() * x) + 1;
+    }
+
+    if(choice == 2){
+      var rand = Math.floor(Math.random() * y) + 1;
+    }
+    
+    input_numbers.push(rand);
+    alert(rand);
+  }
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <p>
-            This is the start of the Team Tone Death HSU Hackathon Application
+            Team Tone Death HSU Hackathon Application
           </p>
-          <p>Lets Get Building!</p>
         </header>
         <body>
-          <div class="form-container">
-            <form onSubmit={this.handleFormSubmit}>
-              {this.createCheckboxes()}
-              <div className="form-group mt-2">
-                <button type="button" onClick={this.selectAll}>
-                  Select All
-                </button>
-                <button type="button" onClick={this.deselectAll}>
-                  Deselect All
-                </button>
-                <button type="submit">
-                  Submit
-                </button>
-              </div>
-            </form>
+        <div class="btn-holder">
+          <div class="btn-row">
+            <button class="power" onClick={this.getCursor.bind(this)} id="btn-1"></button>
+            <button class="power" onClick={this.getCursor.bind(this)}  id="btn-2"></button>
+            <button class="power" onClick={this.getCursor.bind(this)}  id="btn-3"></button>
+            <button class="power" onClick={this.getCursor.bind(this)}  id="btn-4"></button>
           </div>
+          <div class="btn-row-2">
+            <button class="power" onClick={this.getCursor.bind(this)}  id="btn-5"></button>
+            <button class="power" onClick={this.getCursor.bind(this)}  id="btn-6"></button>
+            <button class="power" onClick={this.getCursor.bind(this)}  id="btn-7"></button>
+            <button class="power" onClick={this.getCursor.bind(this)}  id="btn-8"></button>
+          </div>
+          <div class="btn-row-3">
+            <button class="power" onClick={this.getCursor.bind(this)} id="btn-9"></button>
+            <button class="power" onClick={this.getCursor.bind(this)} id="btn-10"></button>
+            <button class="power" onClick={this.getCursor.bind(this)} id="btn-11"></button>
+            <button class="power" onClick={this.getCursor.bind(this)} id="btn-12"></button>
+          </div>
+          <div class="btn-row-3">
+            <button class="power" onClick={this.getCursor.bind(this)} id="btn-13"></button>
+            <button class="power" onClick={this.getCursor.bind(this)}id="btn-14"></button>
+            <button class="power" onClick={this.getCursor.bind(this)} id="btn-15"></button>
+            <button class="power" onClick={this.getCursor.bind(this)} id="btn-16"></button>
+          </div>
+          <p id="numbers"></p>
+        </div>
         </body>
         <footer>
           <p>Developed By Benjamin Miller, Zach Pole, Levi Pole</p>

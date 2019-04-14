@@ -2,13 +2,20 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Checkbox from "./Checkbox";
+import axios from 'axios'
 
-const axios = require('axios');
 //The array of options for the checkbox to select which files
 //You are sending to Magenta.js
-var OPTIONS= ["Midi-One", "Midi-Two", "Midi-Three", "Midi-Four"];
+var OPTIONS= ["Test", "Test2", "Test3"];
 
 class App extends Component {
+
+  componentDidMount(){
+    /*axios.get(`http://localhost:8080/api`)
+      .then(res => {
+        OPTIONS.push(res.data.message);
+      })*/
+  }
   //sets the state of all checkboxes to false
   state = {
     checkboxes: OPTIONS.reduce(
@@ -67,12 +74,7 @@ class App extends Component {
   fetchMidi(){
   }
 
-  componentDidMount(){
-    axios.post('localhost:3001/getMidi')
-      .then(res => {
-        OPTIONS = res.body;
-      })
-  }
+  
 
   //creates checkboxes
   createCheckboxes = () => OPTIONS.map(this.createCheckbox);

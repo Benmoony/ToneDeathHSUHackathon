@@ -3,15 +3,10 @@ import logo from './logo.svg';
 import './App.css';
 import Checkbox from "./Checkbox";
 
-const midiFolder = '../midi-files/';
-
-
-//Store all midi file name in the folder as midi files using file system
-const fs = require('fs');
-
+const axios = require('axios');
 //The array of options for the checkbox to select which files
 //You are sending to Magenta.js
-const OPTIONS= ["Midi-One", "Midi-Two", "Midi-Three", "Test-Midi-Four"];
+var OPTIONS= ["Midi-One", "Midi-Two", "Midi-Three", "Midi-Four"];
 
 class App extends Component {
   //sets the state of all checkboxes to false
@@ -69,12 +64,14 @@ class App extends Component {
     />
   );
 
+  fetchMidi(){
+  }
+
   componentDidMount(){
-    /*fs.readdir(midiFolder, (err, files) => {
-      files.forEach(file => {
-        console.log(file);
-      });
-    });*/
+    axios.post('localhost:3001/getMidi')
+      .then(res => {
+        OPTIONS = res.body;
+      })
   }
 
   //creates checkboxes

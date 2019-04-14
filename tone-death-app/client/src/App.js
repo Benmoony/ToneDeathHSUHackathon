@@ -8,6 +8,7 @@ import axios from 'axios'
 //You are sending to Magenta.js
 //var OPTIONS= ["Test", "Test2", "Test3"];
 const input_numbers = [];
+var num_clicks = 0;
 
 class App extends Component {
 
@@ -24,15 +25,26 @@ class App extends Component {
     var choice = Math.floor(Math.random() * 2) + 1;
 
     if(choice == 1){
-      var rand = Math.floor(Math.random() * x) + 1;
+      //in the future replace with using x and y to generate the random numbers between 1 and 125
+      var rand = Math.floor(Math.random() * 125) + 1;
     }
 
     if(choice == 2){
-      var rand = Math.floor(Math.random() * y) + 1;
+      var rand = Math.floor(Math.random() * 125) + 1;
     }
     
-    input_numbers.push(rand);
     alert(rand);
+    input_numbers.push(rand);
+    num_clicks++;
+  }
+
+  sendNumbers(e){
+    //This function sends numbers to a text file to the server for the tenser flow application to parse
+    alert("sent numbers: " + input_numbers);
+  }
+
+  numClicksGet(){
+    //would populate the p tag with the number of times the person would have clicked the buttons, preventing anymore clicks after 8
   }
 
   render() {
@@ -44,6 +56,7 @@ class App extends Component {
           </p>
         </header>
         <body>
+        <h1>Click 8 Times to Generate an Arpeggio</h1>
         <div class="btn-holder">
           <div class="btn-row">
             <button class="power" onClick={this.getCursor.bind(this)} id="btn-1"></button>
@@ -69,6 +82,8 @@ class App extends Component {
             <button class="power" onClick={this.getCursor.bind(this)} id="btn-15"></button>
             <button class="power" onClick={this.getCursor.bind(this)} id="btn-16"></button>
           </div>
+          <p class="num-counter" dangerouslySetInnerHTML={this.numClicksGet()}></p>
+          <button onClick={this.sendNumbers}>Submit</button>
           <p id="numbers"></p>
         </div>
         </body>

@@ -29,7 +29,7 @@
     "midiutils": "0.0.4",
     "ndarray-resample": "^1.0.1",
     "nodemon": "^1.18.11",
-    "protobufjs": "^6.8.8",
+    "protobufjs": "^6.10.3",
     "tonal": "^2.2.2",
     "window": "^4.2.6"
   },
